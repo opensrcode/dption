@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deption Client</title>
+  <meta name="description" content="Deption Client — lightweight Minecraft client. Download and join the community." />
+  <meta property="og:title" content="Deption Client" />
+  <meta property="og:description" content="Download Deption Client and join the community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="logo.png" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-animated {
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 30%, rgba(236,72,153,0.20), transparent 60%),
+                  radial-gradient(800px 400px at 30% 90%, rgba(34,197,94,0.18), transparent 60%),
+                  #0b0b10;
+    }
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .btn {
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="min-h-screen text-white bg-animated">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-black/40 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="logo.png" alt="Deption Client logo" class="h-9 w-9 rounded-lg" />
+        <span class="font-semibold tracking-wide">Deption Client</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#features" class="hover:text-indigo-300">Features</a>
+        <a href="#changelog" class="hover:text-indigo-300">Changelog</a>
+        <a href="#faq" class="hover:text-indigo-300">FAQ</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://github.com/opensrcode/Deption-Client/releases/download/2.6/dption.zip" class="btn inline-flex items-center rounded-xl bg-indigo-600 px-4 py-2 text-sm font-medium shadow-md hover:shadow-lg">Download</a>
+        <a href="https://discord.gg/8Re5v7TRq3" class="btn inline-flex items-center rounded-xl border border-white/10 px-4 py-2 text-sm font-medium hover:bg-white/5">Discord</a>
+      </div>
+      <button class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-black/60">
+      <div class="mx-auto max-w-7xl px-4 py-3 space-y-2">
+        <a href="#features" class="block px-2 py-2 rounded-lg hover:bg-white/5">Features</a>
+        <a href="#changelog" class="block px-2 py-2 rounded-lg hover:bg-white/5">Changelog</a>
+        <a href="#faq" class="block px-2 py-2 rounded-lg hover:bg-white/5">FAQ</a>
+        <div class="pt-2 flex gap-2">
+          <a href="https://github.com/opensrcode/Deption-Client/releases/download/2.6/dption.zip" class="flex-1 text-center btn rounded-xl bg-indigo-600 px-4 py-2 text-sm font-medium">Download</a>
+          <a href="https://discord.gg/8Re5v7TRq3" class="flex-1 text-center btn rounded-xl border border-white/10 px-4 py-2 text-sm font-medium">Discord</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 pt-20 pb-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/70 mb-4">
+          <span class="h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
+          Now Released
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Deption Client
+          <span class="block text-white/70 text-2xl md:text-3xl mt-2">Ghost Client</span>
+        </h1>
+        <p class="mt-6 text-white/80 max-w-prose">Powerful and inexpensive BlocksMC client for the better experience & clean UI.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="https://github.com/opensrcode/Deption-Client/releases/download/2.6/dption.zip" class="btn inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-5 py-3 font-semibold shadow-lg hover:shadow-xl">
+            Download
+          </a>
+          <a href="https://discord.gg/8Re5v7TRq3" class="btn inline-flex items-center gap-2 rounded-2xl glass px-5 py-3 font-semibold">
+            Join Discord
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-8 blur-3xl opacity-30" style="background: conic-gradient(from 180deg at 50% 50%, rgba(99,102,241,.5), rgba(236,72,153,.5), rgba(34,197,94,.5), rgba(99,102,241,.5)); border-radius: 50%;"></div>
+        <div class="relative glass rounded-3xl p-8 shadow-2xl">
+          <img src="logo.png" alt="Deption logo" class="mx-auto h-40 w-40 rounded-2xl object-contain" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Features</h2>
+      <p class="mt-2 text-white/70">Highlights of Deption Client.</p>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="glass rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Bypasses</h3>
+          <p class="mt-2 text-white/70">Deption is developed with fluid bypasses in mind, the end user can make what meets their needs, whether it's visuals or bypasses.</p>
+        </article>
+        <article class="glass rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Customizable</h3>
+          <p class="mt-2 text-white/70">High customizability is a priority for us, our team is invested in making the end user experience as polished and user friendly as we possibly can.</p>
+        </article>
+        <article class="glass rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Active Developers</h3>
+          <p class="mt-2 text-white/70">Our team makes weekly, and sometimes daily fixes and additions to always keep the client bypassing and working as intended.</p>
+        </article>
+        <article class="glass rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Keybinds</h3>
+          <p class="mt-2 text-white/70">Fast toggles and intuitive defaults for gameplay.</p>
+        </article>
+        <article class="glass rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Active Community</h3>
+          <p class="mt-2 text-white/70">Discord support, patch notes, and updates.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANGELOG -->
+  <section id="changelog" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Changelog</h2>
+      <p class="mt-2 text-white/70">Latest updates and fixes.</p>
+      <div class="mt-6 space-y-4">
+        <div class="glass rounded-2xl p-5">
+          <div class="text-sm text-white/60">2025-08-21</div>
+          <h3 class="mt-1 font-semibold">updates</h3>
+          <ul class="mt-2 list-disc list-inside text-white/80">
+            <li>Core features ready</li>
+            <li> added session info</li>
+            <li> added dynamic island</li>
+            <li> added online configs</li>
+            <li> added blocksmc config</li>
+            <li> and more..</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">FAQ</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-semibold">How do I install Deption Client?</h3>
+          <p class="mt-2 text-white/70">Download the latest release from GitHub, then follow the instructions in the release notes.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-semibold">Is it free?</h3>
+          <p class="mt-2 text-white/70">Yes, Deption Client is free to download and use.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-semibold">What Minecraft versions are supported?</h3>
+          <p class="mt-2 text-white/70">Deption Client is a 1.8.9 ghost client.</p>
+        </div>
+        <div class="glass rounded-2xl p-5">
+          <h3 class="font-semibold">Where can I get help?</h3>
+          <p class="mt-2 text-white/70">Join the Discord (link at the top) for support and announcements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5">
+    <div class="mx-auto max-w-7xl px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Deption logo" class="h-6 w-6 rounded" />
+        <span>© <span id="year"></span> Deption Client</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/opensrcode/Deption-Client/releases/download/2.6/dption.zip" class="hover:text-white">GitHub</a>
+        <a href="https://discord.gg/8Re5v7TRq3" class="hover:text-white">Discord</a>
+        <a href="#home" class="hover:text-white">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
